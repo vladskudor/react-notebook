@@ -10,7 +10,7 @@ export default function User(props) {
         {edit && <Form users={props.users} user={props.user} addUser={props.editUser}/>}
         <div>
             <div>
-                Id: {props.user.id}
+                Id: {props.user.id + 1} 
             </div>
             <div>
                 Name: {props.user.name}
@@ -23,26 +23,15 @@ export default function User(props) {
             </div>
         </div>
         <div className="block-user-buttons" style={{flexDirection: !edit ? 'column' : 'row' , width: edit ? '100%' : 'auto' , flexDirection: edit ? 'row-reverse' : 'center'}}>
-            <AiOutlineClose onClick={() => {
+        <AiOutlineClose id='edit-button' onClick={() => {
                     props.deleteUser(props.user.id)
                 }
             }/>
-            <AiOutlineEdit onClick={() => {
+            <AiOutlineEdit id='edit-button'  onClick={() => {
                     setEdit(!edit);
                 } 
             }/>
-        </div>
-        <div style={{position: 'absolute' , bottom: 0, right: 0}}>
-            <Link to={`/advanced/${props.user.id}/${props.user.name}/${props.user.surname}/${props.user.age}/${props.user.toDrink}/${props.user.additionalInfo}`} style={{
-                textDecoration: 'none',
-                fontSize: '22px',
-                background: '#808080',
-                color: '#000',
-                borderRadius: '10px',
-                padding: '0 10px' ,
-                textTransform: 'uppercase',
-                fontWeight: 600
-            }}>
+            <Link id='edit-button' to={`/advanced/${props.user.id + 1}/${props.user.name}/${props.user.surname}/${props.user.age}/${props.user.toDrink}/${props.user.additionalInfo}`}>
                 <AiOutlineCaretRight />
             </Link>
         </div>

@@ -57,17 +57,17 @@ export default class Main extends Component {
 
   addUser(u){
     this.setState({users: [...this.state.users , u]})
-    localStorage.setItem('users' , JSON.stringify(this.state.users));
+    localStorage.setItem('users' , JSON.stringify([...this.state.users , u]));
   }
 
   deleteUser(u){
     let allUsers = this.state.users;
-    allUsers[u.id + 1] = u;
+    allUsers[u.id] = u;
     console.log(u.id)
     this.setState({
-      users: this.state.users.splice(u , 1)
+      users: this.state.users.filter((user) => user.id !== allUsers[u.id])
     })
-    localStorage.setItem('users' , JSON.stringify(this.state.users));
+    localStorage.setItem('users' , JSON.stringify(this.state.users.filter((user) => user.id !== allUsers[u.id])));
   }
 
   editUser(u){

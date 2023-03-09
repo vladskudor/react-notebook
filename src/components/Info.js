@@ -10,17 +10,18 @@ export default function Info(props) {
 
   let addInfo = () => {
     for(let user = 0;user < props.users.length;user++){
-      if(id == props.users[user].id){
-        props.users[user].additionalInfo = info;
+      if(id == props.users[user].id + 1){
         setCurrentUserInfo(props.users[user].additionalInfo);
+        props.users[user].additionalInfo = info;
         localStorage.setItem('users' , JSON.stringify(props.users));
       }
     }
+    window.location.reload();
   }
 
   useEffect(() => {
     for(let user = 0;user < props.users.length;user++){
-      if(id == props.users[user].id){
+      if(id == props.users[user].id + 1){
         setCurrentUserInfo(props.users[user].additionalInfo);
       }
     }
@@ -55,7 +56,7 @@ export default function Info(props) {
         </div>
       </div>
       <div className='block-addition-info'>
-          <textarea placeholder='Additional info' onChange={e => setInfo(e.target.value)}></textarea>
+          <textarea placeholder='Additional info' onChange={(e) => setInfo(e.target.value)}></textarea>
           <button onClick={addInfo}>Set</button>
       </div>
     </div>

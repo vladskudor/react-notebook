@@ -184,5 +184,14 @@ form label[for='toDrink'] input{
         margin: 5%;
         flex-direction: column;
     }
-    
+}
+
+#edit-button{
+    width: 42px;
+    height: 25px;
+    background-color: #808080;
+    color: #000;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 0 12px;
 }
