@@ -78,6 +78,11 @@ aside{
 .block-user-buttons{
     display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+
+.block-user-buttons svg{
+    font-size: 20px;
 }
 
 form label{
@@ -163,6 +168,7 @@ form label[for='toDrink'] input{
     border-radius: 10px 0 0 10px;
     font-size: 16px;
     padding: 1%;
+    background-color: #808080;
 }
 
 .block-addition-info button{
@@ -186,12 +192,3 @@ form label[for='toDrink'] input{
     }
 }
 
-#edit-button{
-    width: 42px;
-    height: 25px;
-    background-color: #808080;
-    color: #000;
-    border-radius: 10px;
-    margin-top: 10px;
-    padding: 0 12px;
-}

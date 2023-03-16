@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {AiOutlineDoubleLeft} from 'react-icons/ai';
-import './style.css'
+import './style.css';
+import { useDispatch } from 'react-redux';
 
 export default function Info(props) {
   let {id , name , surname , age , toDrink , additionalInfo} = useParams();  
   let [info , setInfo] = useState('');
   let [currentInfo , setCurrentUserInfo] = useState(''); 
+  const dispatch = useDispatch(); 
 
   let addInfo = () => {
     for(let user = 0;user < props.users.length;user++){
       if(id == props.users[user].id + 1){
         setCurrentUserInfo(props.users[user].additionalInfo);
         props.users[user].additionalInfo = info;
+        dispatch({type: 'ADD_INFO_TO_USER' , payload: props.users[user]});
         localStorage.setItem('users' , JSON.stringify(props.users));
       }
     }

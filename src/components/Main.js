@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import User from './User';
 import Form from './Form';
-import './style.css'
+import './style.css';
 
 export default class Main extends Component {
   constructor(props){

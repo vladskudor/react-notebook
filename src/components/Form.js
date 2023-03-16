@@ -1,57 +1,69 @@
-import React, { Component } from 'react';
+import React, { useRef, useState , useEffect } from "react";
 import {AiOutlineUserAdd} from 'react-icons/ai'
 import './style.css';
+import { useDispatch } from "react-redux";
 
-export default class Form extends Component {
-    userAdd = {};
-    constructor(props){
-        super(props)
-        this.state = {
-            name: '',
-            surname: '',
-            age: 0,
-            toDrink: false,
-            id: this.props.users.length,
-            additionalInfo: ''
+export default function Form(props){
+    let ref = useRef();
+    let userAdd = {};
+    let myForm;
+    let [name , setName] = useState('');
+    let [surname , setSurName] = useState('');
+    let [age , setAge] = useState(0);
+    let [toDrink , setToDrink] = useState(false);
+    let [id , setId] = useState(props.users.length);
+    let [additionalInfo , setAdditionalInfo] = useState('');
+
+    const dispatch = useDispatch(); 
+
+    useEffect(() => {
+        if(ref.current.value === 'julia') {
+            alert('Acces blocked!!!');
+            ref.current.style.background = 'red';
+        }else{
+            ref.current.style.background = '#80800';
         }
-    }
-    
-  render() {
+    })
+
     return (
-        <form ref={(el) => this.myForm = el}>
+        <form ref={(el) => myForm = el}>
             <label htmlFor="name">
                 Edit name: 
-                <input type="text" onChange={(e) => this.setState({name: e.target.value})} placeholder='enter name' id='name'/>
+                <input type="text" ref={ref} onChange={(e) => setName(e.target.value)} placeholder='enter name' id='name'/>
             </label>
             <label htmlFor="surname">
                 Edit surname: 
-                <input type="text" onChange={(e) => this.setState({surname: e.target.value})} placeholder='enter surname' id='surname'/>
+                <input type="text" onChange={(e) => setSurName(e.target.value)} placeholder='enter surname' id='surname'/>
             </label>
             <label htmlFor="age">
                 Edit age: 
-                <input type="number" onChange={(e) => this.setState({age: e.target.value})}  placeholder='enter age' id='age' />
+                <input type="number" onChange={(e) => setAge(e.target.value)}  placeholder='enter age' id='age' />
             </label>
             <label htmlFor="toDrink">
                 Drink: 
-                <input type="checkbox" onChange={(e) => this.setState({toDrink: e.target.checked})}  placeholder='enter to drink' id='toDrink' />
+                <input type="checkbox" onChange={(e) => setToDrink(e.target.checked)}  placeholder='enter to drink' id='toDrink' />
             </label>
             <AiOutlineUserAdd id='button-add-user' onClick={() => {
-                    this.myForm.reset();
-                    this.setState({id: this.state.id + 1});
-                    this.userAdd = {
-                        name: this.state.name,
-                        surname: this.state.surname,
-                        age: this.state.age,
-                        toDrink: this.state.toDrink,
-                        id: this.state.id,
+                    myForm.reset();
+                    setId(id + 1);
+                    userAdd = {
+                        name: name,
+                        surname: surname,
+                        age: age,
+                        toDrink: toDrink,
+                        id: id,
                         additionalInfo: 'info'
                     }
-                    if(this.props.user){
-                        this.userAdd.id = this.props.user.id;
+                    if(props.user){
+                        userAdd.id = props.user.id;
+                        dispatch({type: 'UPD_DATA' , payload: userAdd})
+                    }else{
+                        props.addUser(userAdd);
+                        dispatch({type: 'ADD_DATA' , payload: userAdd})
                     }
-                    this.props.addUser(this.userAdd);
             }} />
         </form>
     )
-  }
+
 }
+

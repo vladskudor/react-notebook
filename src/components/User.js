@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { AiOutlineClose , AiOutlineEdit , AiOutlineCaretRight} from "react-icons/ai";
 import Form from './Form';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 export default function User(props) {
     let [edit , setEdit] = useState(false);
+    const dispatch = useDispatch(); 
   return (
     <div className="block-user-property" style={{flexDirection: edit ? 'column-reverse' : 'row'}}>
         {edit && <Form users={props.users} user={props.user} addUser={props.editUser}/>}
@@ -23,8 +25,9 @@ export default function User(props) {
             </div>
         </div>
         <div className="block-user-buttons" style={{flexDirection: !edit ? 'column' : 'row' , width: edit ? '100%' : 'auto' , flexDirection: edit ? 'row-reverse' : 'center'}}>
-        <AiOutlineClose id='edit-button' onClick={() => {
-                    props.deleteUser(props.user.id)
+            <AiOutlineClose id='edit-button' onClick={() => {
+                    props.deleteUser(props.user.id);
+                    dispatch({type: 'DEL_DATA' , payload: props.user.id})
                 }
             }/>
             <AiOutlineEdit id='edit-button'  onClick={() => {
