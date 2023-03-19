@@ -10,7 +10,7 @@ export default function Form(props){
     let [name , setName] = useState('');
     let [surname , setSurName] = useState('');
     let [age , setAge] = useState(0);
-    let [toDrink , setToDrink] = useState(false);
+    let [married , setToMarried] = useState(false);
     let [id , setId] = useState(props.users.length);
     let [additionalInfo , setAdditionalInfo] = useState('');
 
@@ -39,9 +39,9 @@ export default function Form(props){
                 Edit age: 
                 <input type="number" onChange={(e) => setAge(e.target.value)}  placeholder='enter age' id='age' />
             </label>
-            <label htmlFor="toDrink">
-                Drink: 
-                <input type="checkbox" onChange={(e) => setToDrink(e.target.checked)}  placeholder='enter to drink' id='toDrink' />
+            <label htmlFor="toMarried">
+                Married: 
+                <input type="checkbox" onChange={(e) => setToMarried(e.target.checked)}  placeholder='enter to drink' id='toMarried' />
             </label>
             <AiOutlineUserAdd id='button-add-user' onClick={() => {
                     myForm.reset();
@@ -50,7 +50,7 @@ export default function Form(props){
                         name: name,
                         surname: surname,
                         age: age,
-                        toDrink: toDrink,
+                        married: married,
                         id: id,
                         additionalInfo: 'info'
                     }

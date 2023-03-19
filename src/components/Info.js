@@ -19,7 +19,6 @@ export default function Info(props) {
         localStorage.setItem('users' , JSON.stringify(props.users));
       }
     }
-    window.location.reload();
   }
 
   useEffect(() => {
@@ -28,15 +27,15 @@ export default function Info(props) {
         setCurrentUserInfo(props.users[user].additionalInfo);
       }
     }
-  } , [])
+  })
 
   return (
-    <div>
+    <div style={{background: '#000'}}>
       <div className="button-back">
         <Link style={{
           textDecoration: 'none',
           fontSize: '22px',
-          background: '#808080',
+          background: '#17b0d0',
           color: '#000',
           borderRadius: '10px',
           padding: '10px 20px' ,
@@ -50,13 +49,14 @@ export default function Info(props) {
           <div>name: {name}</div>
           <div>surname: {surname}</div>
           <div>age: {age}</div>
+          <div>
+            Married: {toDrink ? 'Yes' : 'no'}
+          </div>
         </div>
         <div>
-          Bio: {toDrink ? 'Yes' : 'no'}
-        </div>
-        <div>
-          Additional info: {currentInfo ? currentInfo : additionalInfo}
-        </div>
+            Additional info: 
+            <div>{currentInfo ? currentInfo : additionalInfo}</div>
+          </div>
       </div>
       <div className='block-addition-info'>
           <textarea placeholder='Additional info' onChange={(e) => setInfo(e.target.value)}></textarea>

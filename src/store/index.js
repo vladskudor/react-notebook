@@ -1,8 +1,8 @@
 import {createStore , combineReducers} from 'redux';
-import {dataReduser} from './Reduser';
+import {DataReduser} from './Reduser';
 
 const rootReduser = combineReducers({
-    users: dataReduser
+    users: DataReduser
 })
 
 

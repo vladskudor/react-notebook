@@ -7,10 +7,11 @@ import { useDispatch } from 'react-redux';
 export default function User(props) {
     let [edit , setEdit] = useState(false);
     const dispatch = useDispatch(); 
+
   return (
     <div className="block-user-property" style={{flexDirection: edit ? 'column-reverse' : 'row'}}>
         {edit && <Form users={props.users} user={props.user} addUser={props.editUser}/>}
-        <div>
+        <div style={{display: edit ? 'grid' : 'inline' , gridTemplateColumns: edit && 'repeat(4 , 2fr)' , padding: '1%'}}>
             <div>
                 Id: {props.user.id + 1} 
             </div>
@@ -35,7 +36,7 @@ export default function User(props) {
                 } 
             }/>
             <Link id='edit-button' to={`/advanced/${props.user.id + 1}/${props.user.name}/${props.user.surname}/${props.user.age}/${props.user.toDrink}/${props.user.additionalInfo}`}>
-                <AiOutlineCaretRight />
+                <AiOutlineCaretRight style={{color: '#17b0d0'}} />
             </Link>
         </div>
     </div>

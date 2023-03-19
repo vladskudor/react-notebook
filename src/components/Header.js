@@ -7,7 +7,7 @@ export default function Header(props) {
   return (
     <div className='block-header'>
       <h1>Users</h1>
-      {props.media.matches && !info ? <AiOutlineMenu  style={{cursor: 'pointer'}} onClick={() => props.stateMenu()} /> : false}
+      {props.media.matches && !info ? <AiOutlineMenu  style={{cursor: 'pointer' , color: '#17b0d0'}} onClick={() => props.stateMenu()} /> : false}
     </div>
    
   )

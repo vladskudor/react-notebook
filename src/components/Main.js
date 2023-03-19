@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component , useState , useEffect} from 'react';
 import Header from './Header';
 import User from './User';
 import Form from './Form';
@@ -10,7 +10,16 @@ export default class Main extends Component {
     this.state = {
         users: this.props.users,
         media: window.matchMedia(`(max-width: 768px)`),
-        menu: false
+        menu: false,
+        stylesForm: !window.matchMedia(`(max-width: 768px)`).matches ? {
+          position: 'fixed',
+          right: '5%',
+          top: '80px'
+        } : {
+          position: 'statik',
+          right: '0',
+          top: '0'
+        }
     }
 
     this.addUser = this.addUser.bind(this);
@@ -21,7 +30,7 @@ export default class Main extends Component {
 
   componentDidMount(){
     if(this.state.media.matches){
-      this.setState({menu: false})
+      this.setState({menu: false});
     }
     if(!this.state.media.matches){
       this.setState({menu: true})
@@ -29,25 +38,25 @@ export default class Main extends Component {
   }
 
   componentDidUpdate(p){
-    console.log(p);
+    console.log(this.state.users);
   }
 
   render() {
     return (
       <div>
-        <Header stateMenu={this.stateMenu} menu={this.state.media.menu} media={this.state.media}/>
+        <Header stateMenu={this.stateMenu} menu={this.state.media.menu} media={this.state.media} />
         <div className='block-users'>
             <main>
-                {this.state.users.map((user, index) => {
+                {this.state.users.length ? this.state.users.map((user, index) => {
                     return(
                       <div key={index} className="block-user">
                           <User users={this.state.users} user={user} deleteUser={this.deleteUser} editUser={this.editUser} />
                       </div>
                     )
-                  })
+                  }) : <div className="block-user" style={{color: 'yellow'}}>No users</div>
                 }
             </main>
-            <aside>
+            <aside style={this.state.stylesForm}>
                 {this.state.menu && <Form users={this.state.users} addUser={this.addUser}/>}
             </aside>
         </div>
@@ -56,6 +65,7 @@ export default class Main extends Component {
   }
 
   addUser(u){
+    if(u.name.length === 0 || u.surname === 0 || u.age === 0) return;
     this.setState({users: [...this.state.users , u]})
     localStorage.setItem('users' , JSON.stringify([...this.state.users , u]));
   }
