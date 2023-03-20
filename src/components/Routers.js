@@ -19,7 +19,7 @@ export default class Routers extends React.Component {
             <div>
                 <Routes>
                     <Route path="/" element={ <Main users={this.state.users}/>}></Route>
-                    <Route path="/advanced/:id/:name/:surname/:age/:toDrink/:additionalInfo" element={ <Info users={this.state.users}/>}></Route>
+                    <Route path="/advanced/:id/:name/:surname/:age/:tel/:email/:toDrink/:additionalInfo" element={ <Info users={this.state.users}/>}></Route>
                 </Routes>
             </div>
         )

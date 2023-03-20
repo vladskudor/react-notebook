@@ -5,7 +5,7 @@ import './style.css';
 import { useDispatch } from 'react-redux';
 
 export default function Info(props) {
-  let {id , name , surname , age , toDrink , additionalInfo} = useParams();  
+  let {id , name , surname , age , tel , email , toDrink , additionalInfo} = useParams();  
   let [info , setInfo] = useState('');
   let [currentInfo , setCurrentUserInfo] = useState(''); 
   const dispatch = useDispatch(); 
@@ -49,6 +49,8 @@ export default function Info(props) {
           <div>name: {name}</div>
           <div>surname: {surname}</div>
           <div>age: {age}</div>
+          <div>tel: {tel}</div>
+          <div>email: {email}</div>
           <div>
             Married: {toDrink ? 'Yes' : 'no'}
           </div>

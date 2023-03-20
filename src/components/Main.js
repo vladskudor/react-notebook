@@ -9,16 +9,16 @@ export default class Main extends Component {
     super(props)
     this.state = {
         users: this.props.users,
-        media: window.matchMedia(`(max-width: 768px)`),
+        media: window.matchMedia(`(max-width: 575px)`),
         menu: false,
-        stylesForm: !window.matchMedia(`(max-width: 768px)`).matches ? {
+        stylesForm: !window.matchMedia(`(max-width: 575px)`).matches ? {
           position: 'fixed',
           right: '5%',
-          top: '80px'
+          top: '85px'
         } : {
           position: 'statik',
           right: '0',
-          top: '0'
+          top: ''
         }
     }
 
@@ -26,6 +26,7 @@ export default class Main extends Component {
     this.deleteUser = this.deleteUser.bind(this);
     this.editUser = this.editUser.bind(this);
     this.stateMenu = this.stateMenu.bind(this);
+    this.listener = this.listener.bind(this);
   }  
 
   componentDidMount(){
@@ -38,30 +39,57 @@ export default class Main extends Component {
   }
 
   componentDidUpdate(p){
-    console.log(this.state.users);
+
+
+    window.addEventListener("resize", this.listener);
+    return () => window.removeEventListener("resize", this.listener);
   }
 
   render() {
-    return (
-      <div>
-        <Header stateMenu={this.stateMenu} menu={this.state.media.menu} media={this.state.media} />
-        <div className='block-users'>
-            <main>
-                {this.state.users.length ? this.state.users.map((user, index) => {
-                    return(
-                      <div key={index} className="block-user">
-                          <User users={this.state.users} user={user} deleteUser={this.deleteUser} editUser={this.editUser} />
-                      </div>
-                    )
-                  }) : <div className="block-user" style={{color: 'yellow'}}>No users</div>
-                }
-            </main>
-            <aside style={this.state.stylesForm}>
-                {this.state.menu && <Form users={this.state.users} addUser={this.addUser}/>}
-            </aside>
+    if(this.state.menu){
+      return (
+        <div>
+          <Header stateMenu={this.stateMenu} menu={this.state.media.menu} media={this.state.media} />
+          <div className='block-users'>
+              <main>
+                  {this.state.users.length ? this.state.users.map((user, index) => {
+                      return(
+                        <div key={index} className="block-user">
+                            <User users={this.state.users} user={user} deleteUser={this.deleteUser} editUser={this.editUser} />
+                        </div>
+                      )
+                    }) : <div className="block-user" style={{color: 'yellow'}}>No users</div>
+                  }
+              </main>
+              <aside style={this.state.stylesForm}>
+                  {this.state.menu && <Form users={this.state.users} addUser={this.addUser}/>}
+              </aside>
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
+    else{
+      return (
+        <div>
+          <Header stateMenu={this.stateMenu} menu={this.state.media.menu} media={this.state.media} />
+          <div className='block-users'>
+              <main>
+                  {this.state.users.length ? this.state.users.map((user, index) => {
+                      return(
+                        <div key={index} className="block-user">
+                            <User users={this.state.users} user={user} deleteUser={this.deleteUser} editUser={this.editUser} />
+                        </div>
+                      )
+                    }) : <div className="block-user" style={{color: 'yellow'}}>No users</div>
+                  }
+              </main>
+              <aside style={this.state.stylesForm}>
+                  {this.state.menu && <Form users={this.state.users} addUser={this.addUser}/>}
+              </aside>
+          </div>
+        </div>
+      )
+    }
   }
 
   addUser(u){
@@ -91,5 +119,15 @@ export default class Main extends Component {
 
   stateMenu(){
     this.setState({menu: !this.state.menu})
+  }
+
+  listener(){
+    this.setState({media: this.state.media});
+    if(this.state.media.matches){
+      this.setState({menu: false});
+    }
+    if(!this.state.media.matches){
+      this.setState({menu: true})
+    }
   }
 }

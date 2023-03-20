@@ -11,6 +11,8 @@ export default function Form(props){
     let [surname , setSurName] = useState('');
     let [age , setAge] = useState(0);
     let [married , setToMarried] = useState(false);
+    let [tel , setTel] = useState(0);
+    let [email , setEmail] = useState('');
     let [id , setId] = useState(props.users.length);
     let [additionalInfo , setAdditionalInfo] = useState('');
 
@@ -39,6 +41,14 @@ export default function Form(props){
                 Edit age: 
                 <input type="number" onChange={(e) => setAge(e.target.value)}  placeholder='enter age' id='age' />
             </label>
+            <label htmlFor="tel">
+                Tel: 
+                <input type="number" onChange={(e) => setTel(e.target.value)}  placeholder='enter tel' id='tel' />
+            </label>
+            <label htmlFor="email">
+                Email: 
+                <input type="email" onChange={(e) => setEmail(e.target.value)}  placeholder='enter email' id='email' />
+            </label>
             <label htmlFor="toMarried">
                 Married: 
                 <input type="checkbox" onChange={(e) => setToMarried(e.target.checked)}  placeholder='enter to drink' id='toMarried' />
@@ -51,6 +61,8 @@ export default function Form(props){
                         surname: surname,
                         age: age,
                         married: married,
+                        tel: tel,
+                        email: email,
                         id: id,
                         additionalInfo: 'info'
                     }
