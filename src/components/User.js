@@ -18,42 +18,42 @@ export default function User(props) {
     <div className="block-user-property" style={styleBlockUser}>
         {edit && <Form users={props.users} user={props.user} addUser={props.editUser}/>}
         <div>
-            <div style={{borderTop: '1px solid yellow'}} className='property'>
+            <div>
                 Id:
             </div>
-            <div className='property'>
+            <div>
                 Name:
             </div>
-            <div className='property'>
+            <div>
                 Surname:
             </div>
-            <div className='property'>
+            <div>
                 Age:
             </div>  
-            <div className='property'>
+            <div>
                 Tel:
             </div> 
-            <div className='property'>
+            <div>
                 Email:
             </div> 
         </div>
         <div>
-            <div style={{borderTop: '1px solid yellow'}} className='property'>
+            <div>
                 {props.user.id}
             </div>
-            <div className='property'>
+            <div>
                 {props.user.name}
             </div>
-            <div className='property'>
+            <div>
                 {props.user.surname}
             </div>
-            <div className='property'>
+            <div>
                 {props.user.age}
             </div>  
-            <div className='property'>
+            <div>
                 {props.user.tel}
             </div> 
-            <div className='property'>
+            <div>
                 {props.user.email}
             </div> 
         </div>

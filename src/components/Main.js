@@ -39,8 +39,6 @@ export default class Main extends Component {
   }
 
   componentDidUpdate(p){
-
-
     window.addEventListener("resize", this.listener);
     return () => window.removeEventListener("resize", this.listener);
   }
@@ -123,11 +121,5 @@ export default class Main extends Component {
 
   listener(){
     this.setState({media: this.state.media});
-    if(this.state.media.matches){
-      this.setState({menu: false});
-    }
-    if(!this.state.media.matches){
-      this.setState({menu: true})
-    }
   }
 }
