@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-notebook/static/css/main.d9d72a8d.css",
-    "main.js": "/react-notebook/static/js/main.1601918d.js",
+    "main.css": "/react-notebook/static/css/main.56cb1020.css",
+    "main.js": "/react-notebook/static/js/main.1e3d837e.js",
     "static/js/787.ff49af97.chunk.js": "/react-notebook/static/js/787.ff49af97.chunk.js",
-    "static/media/wallp.jpg": "/react-notebook/static/media/wallp.b1685c02b466276ce280.jpg",
+    "static/media/wallp.jpg": "/react-notebook/static/media/wallp.5071b10d697ad7044f4e.jpg",
     "index.html": "/react-notebook/index.html",
-    "main.d9d72a8d.css.map": "/react-notebook/static/css/main.d9d72a8d.css.map",
-    "main.1601918d.js.map": "/react-notebook/static/js/main.1601918d.js.map",
+    "main.56cb1020.css.map": "/react-notebook/static/css/main.56cb1020.css.map",
+    "main.1e3d837e.js.map": "/react-notebook/static/js/main.1e3d837e.js.map",
     "787.ff49af97.chunk.js.map": "/react-notebook/static/js/787.ff49af97.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9d72a8d.css",
-    "static/js/main.1601918d.js"
+    "static/css/main.56cb1020.css",
+    "static/js/main.1e3d837e.js"
   ]
 }
