@@ -11,15 +11,6 @@ export default class Main extends Component {
         users: this.props.users,
         media: window.matchMedia(`(max-width: 575px)`),
         menu: false,
-        stylesForm: !window.matchMedia(`(max-width: 575px)`).matches ? {
-          position: 'fixed',
-          right: '5%',
-          top: '85px'
-        } : {
-          position: 'statik',
-          right: '0',
-          top: ''
-        }
     }
 
     this.addUser = this.addUser.bind(this);
@@ -27,7 +18,7 @@ export default class Main extends Component {
     this.editUser = this.editUser.bind(this);
     this.stateMenu = this.stateMenu.bind(this);
     this.listener = this.listener.bind(this);
-  }  
+  }
 
   componentDidMount(){
     if(this.state.media.matches){
@@ -59,7 +50,7 @@ export default class Main extends Component {
                     }) : <div className="block-user" style={{color: 'yellow'}}>No users</div>
                   }
               </main>
-              <aside style={this.state.stylesForm}>
+              <aside>
                   {this.state.menu && <Form users={this.state.users} addUser={this.addUser}/>}
               </aside>
           </div>
@@ -123,3 +114,5 @@ export default class Main extends Component {
     this.setState({media: this.state.media});
   }
 }
+
+

@@ -17,7 +17,7 @@ export default function User(props) {
   return (
     <div className="block-user-property" style={styleBlockUser}>
         {edit && <Form users={props.users} user={props.user} addUser={props.editUser}/>}
-        <div>
+        <div style={{width: edit && '30%' , padding: edit && '10px 0'}}>
             <div>
                 Id:
             </div>

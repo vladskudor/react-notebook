@@ -20,6 +20,8 @@ form{
     width: 100%;
     color: #17b0d0;
     background-color: #000;
+    position: sticky;
+    top: 90px;
 }
 
 main{
@@ -28,7 +30,7 @@ main{
 
 aside{
     width: 20%;
-    margin: 0 auto;
+    margin: 20px auto;
     color: #000;
 }
 
@@ -105,10 +107,6 @@ input{
 .block-user-property{
     display: grid;
     grid-template-columns: 2fr 2fr .1fr;
-}
-
-.property{
-    border-bottom: 1px solid yellow;
 }
 
 .block-user-buttons{
