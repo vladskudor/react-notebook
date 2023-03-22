@@ -37,7 +37,7 @@ export default function User(props) {
                 Email:
             </div> 
         </div>
-        <div>
+        <div style={{width: edit && '30%' , padding: edit && '10px 0'}}>
             <div>
                 {props.user.id}
             </div>
