@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-notebook/static/css/main.9aee5dfb.css",
+    "main.css": "/react-notebook/static/css/main.13ab6162.css",
     "main.js": "/react-notebook/static/js/main.9633de31.js",
     "static/js/787.ff49af97.chunk.js": "/react-notebook/static/js/787.ff49af97.chunk.js",
     "static/media/wallp.jpg": "/react-notebook/static/media/wallp.5071b10d697ad7044f4e.jpg",
     "static/media/mobile-wallp.jpg": "/react-notebook/static/media/mobile-wallp.932ebbe3d10a7f88454c.jpg",
     "index.html": "/react-notebook/index.html",
-    "main.9aee5dfb.css.map": "/react-notebook/static/css/main.9aee5dfb.css.map",
+    "main.13ab6162.css.map": "/react-notebook/static/css/main.13ab6162.css.map",
     "main.9633de31.js.map": "/react-notebook/static/js/main.9633de31.js.map",
     "787.ff49af97.chunk.js.map": "/react-notebook/static/js/787.ff49af97.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9aee5dfb.css",
+    "static/css/main.13ab6162.css",
     "static/js/main.9633de31.js"
   ]
 }
