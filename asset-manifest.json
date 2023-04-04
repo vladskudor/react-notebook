@@ -1,18 +1,26 @@
 {
   "files": {
-    "main.css": "/react-notebook/static/css/main.51dcc437.css",
-    "main.js": "/react-notebook/static/js/main.7726d90f.js",
+    "main.css": "/react-notebook/static/css/main.4edcdb46.css",
+    "main.js": "/react-notebook/static/js/main.0dae049b.js",
     "static/js/787.ff49af97.chunk.js": "/react-notebook/static/js/787.ff49af97.chunk.js",
+    "static/media/saturn.png": "/react-notebook/static/media/saturn.a6ec618f0a83f8ae3360.png",
     "static/media/wallp.jpg": "/react-notebook/static/media/wallp.5071b10d697ad7044f4e.jpg",
     "static/media/universe.png": "/react-notebook/static/media/universe.4b068918daf2cc69d366.png",
     "static/media/mobile-wallp.jpg": "/react-notebook/static/media/mobile-wallp.932ebbe3d10a7f88454c.jpg",
+    "static/media/earth.jpg": "/react-notebook/static/media/earth.5d87ceec909edd94533d.jpg",
+    "static/media/mercury.jpg": "/react-notebook/static/media/mercury.49fda4ecff8a71724ea7.jpg",
+    "static/media/venus.jpg": "/react-notebook/static/media/venus.f6e95a8befa90140ec7f.jpg",
+    "static/media/mars.jpg": "/react-notebook/static/media/mars.d536d02fcb03593dfe2f.jpg",
+    "static/media/jupiter.jpg": "/react-notebook/static/media/jupiter.33b6a2e7cd82b9d49380.jpg",
+    "static/media/uranus.jpg": "/react-notebook/static/media/uranus.628baa2198901d938d9d.jpg",
+    "static/media/neptune.jpg": "/react-notebook/static/media/neptune.ae28bb393e43a19c4b69.jpg",
     "index.html": "/react-notebook/index.html",
-    "main.51dcc437.css.map": "/react-notebook/static/css/main.51dcc437.css.map",
-    "main.7726d90f.js.map": "/react-notebook/static/js/main.7726d90f.js.map",
+    "main.4edcdb46.css.map": "/react-notebook/static/css/main.4edcdb46.css.map",
+    "main.0dae049b.js.map": "/react-notebook/static/js/main.0dae049b.js.map",
     "787.ff49af97.chunk.js.map": "/react-notebook/static/js/787.ff49af97.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.51dcc437.css",
-    "static/js/main.7726d90f.js"
+    "static/css/main.4edcdb46.css",
+    "static/js/main.0dae049b.js"
   ]
 }
