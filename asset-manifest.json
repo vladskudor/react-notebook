@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-notebook/static/css/main.741fa954.css",
-    "main.js": "/react-notebook/static/js/main.536b4ad0.js",
+    "main.css": "/react-notebook/static/css/main.99d6a9b0.css",
+    "main.js": "/react-notebook/static/js/main.6ac393a1.js",
     "static/js/787.ff49af97.chunk.js": "/react-notebook/static/js/787.ff49af97.chunk.js",
     "static/media/saturn.png": "/react-notebook/static/media/saturn.a6ec618f0a83f8ae3360.png",
     "static/media/wallp.jpg": "/react-notebook/static/media/wallp.5071b10d697ad7044f4e.jpg",
@@ -15,12 +15,12 @@
     "static/media/neptune.jpg": "/react-notebook/static/media/neptune.ae28bb393e43a19c4b69.jpg",
     "static/media/jupiter.jpg": "/react-notebook/static/media/jupiter.6d4573b0369bf5a9cb8b.jpg",
     "index.html": "/react-notebook/index.html",
-    "main.741fa954.css.map": "/react-notebook/static/css/main.741fa954.css.map",
-    "main.536b4ad0.js.map": "/react-notebook/static/js/main.536b4ad0.js.map",
+    "main.99d6a9b0.css.map": "/react-notebook/static/css/main.99d6a9b0.css.map",
+    "main.6ac393a1.js.map": "/react-notebook/static/js/main.6ac393a1.js.map",
     "787.ff49af97.chunk.js.map": "/react-notebook/static/js/787.ff49af97.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.741fa954.css",
-    "static/js/main.536b4ad0.js"
+    "static/css/main.99d6a9b0.css",
+    "static/js/main.6ac393a1.js"
   ]
 }
